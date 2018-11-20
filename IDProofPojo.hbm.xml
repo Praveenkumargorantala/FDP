@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-mapping>
+   <class name = "com.epam.domain.IDProofPojo" table = "Idproof">
+      
+     
+      <id name = "emailId" type = "string" column = "emailId"/>
+         
+      
+      
+      <property name = "idProofName" column = "idProofName" type = "string"/>
+      <property name = "lastName" column = "last_name" type = "string"/>
+      <property name = "image" column = "proof" type = "blob"/>
+      
+   </class>
+</hibernate-mapping>
