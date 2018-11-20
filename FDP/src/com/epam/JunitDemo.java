@@ -41,15 +41,10 @@ class JunitDemo {
 		assertEquals("Raju", "Raju");
 	}
 	
+	
 	@Test
 	void test2() {
 		System.out.println("in test2");
-	}
-
-	
-	@Test
-	void test() {
-		fail("Not yet implemented");
 	}
 
 }
