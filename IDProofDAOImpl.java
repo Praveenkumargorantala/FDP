@@ -1,6 +1,7 @@
 package com.epam.daoimpl;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -17,21 +18,24 @@ public class IDProofDAOImpl implements IDProofDAO {
 	
 	PreparedStatement preparedStatement = null;
 	
-	@Override
+	
 	public boolean updateIDProof(IDProofBean idProofBean) {
 		
 		try
 		{
 			 // constructs SQL statement
-            String sql = "update idproof set image=? where emailid=?";
+            //String sql = "insert into idproof values(?,?,?)";
+			String sql = "update idproof set idproof=? , typeofidproof=? where emailid=?";
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setBlob(1, idProofBean.getFilePart().getInputStream());
-            statement.setString(2, idProofBean.getEmailId());
+            /*statement.setBlob(1, idProofBean.getFilePart().getInputStream());
+            statement.setString(2, idProofBean.getEmailId());*/
              
-           /* if (idProofBean.getFilePart().getInputStream() != null) {
+            statement.setString(3, idProofBean.getEmailId());
+            statement.setString(2, idProofBean.getIdProofName());
+            if (idProofBean.getFilePart().getInputStream() != null) {
                 // fetches input stream of the upload file for the blob column
-                statement.setBlob(3, idProofBean.getFilePart().getInputStream());
-            }*/
+                statement.setBlob(1, idProofBean.getFilePart().getInputStream());
+            }
  
             // sends the statement to the database server
             int row = statement.executeUpdate();
