@@ -28,10 +28,10 @@ public class IDProofDAOImpl implements IDProofDAO {
             statement.setBlob(1, idProofBean.getFilePart().getInputStream());
             statement.setString(2, idProofBean.getEmailId());
              
-            if (idProofBean.getFilePart().getInputStream() != null) {
+           /* if (idProofBean.getFilePart().getInputStream() != null) {
                 // fetches input stream of the upload file for the blob column
                 statement.setBlob(3, idProofBean.getFilePart().getInputStream());
-            }
+            }*/
  
             // sends the statement to the database server
             int row = statement.executeUpdate();
