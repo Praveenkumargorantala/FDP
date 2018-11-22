@@ -1,0 +1,6 @@
+
+ create database updateidproof;
+
+use updateidproof;
+
+ create table IDProof(emailid varchar(40), typeofidproof varchar(40), idproof longblob);
